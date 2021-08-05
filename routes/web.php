@@ -22,10 +22,10 @@ Route::get('/', function () {
 Route::prefix('home')->group(function (){
     Route::get('login',[LoginController::class,'index'])->name('home.showLogin');
     Route::post('login',[LoginController::class,'login'])->name('home.login');
-    Route::get('index',[FoodsController::class,'index'])->name('home.index');
     Route::get('register',[RegisterController::class,'create'])->name('register.index');
     Route::post('register',[RegisterController::class,'store'])->name('register.store');
-});
-Route::get('test',function (){
-    return view('backend.master');
+    Route::get('index',[FoodsController::class,'index'])->name('home.index');
+    Route::get('create',[FoodsController::class,'create'])->name('home.create');
+    Route::post('create',[FoodsController::class,'store'])->name('home.store');
+
 });
