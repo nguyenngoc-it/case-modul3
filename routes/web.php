@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('register')->group(function (){
+    Route::get('/register',[\App\Http\Controllers\RegisterController::class,'create'])->name('register.index');
+    Route::post('/register',[\App\Http\Controllers\RegisterController::class,'store'])->name('register.store');
+});
