@@ -9,7 +9,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('register/css/style.css')}}">
+
 
 </head>
 <body class="img" style="background-image: url({{asset('register/images/bg.jpg')}});">
@@ -80,11 +81,11 @@
     </div>
 </section>
 
-<script src="js/jquery.min.js"></script>
+<script src="{{asset('register/js/jquery.min.js')}}"></script>
 <script src="{{asset('register/js/my.js')}}"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{asset('register/js/popper.js')}}"></script>
+<script src="{{asset('register/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('register/js/main.js')}}"></script>
 
 </body>
 </html>
