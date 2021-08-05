@@ -37,9 +37,9 @@
                             <td>{{ $food->name }}</td>
                             <td>
                                 @if($food->image)
-                                    <img src="{{ asset('storage/'.$food->image) }}" alt="" style="width: 150px; height: 150px">
+                                    <img src="{{ asset('storage/'.$food->image) }}" alt="" style="width: 100px; height: 100px">
                                 @else
-                                    <img src="public/storage/imgs/p9fO19BK4hqqtZO2dVDDOEHPdGTjxS58HbsHDFTH.png" alt="" style="width: 150px; height: 150px">
+                                    <img src="public/storage/imgs/p9fO19BK4hqqtZO2dVDDOEHPdGTjxS58HbsHDFTH.png" alt="" style="width: 100px; height: 100px">
                                 @endif
                             </td>
                             <td>{{ $food->address }}</td>
@@ -48,8 +48,8 @@
                             <td>{{ $food->price }}</td>
                             <td>{{ $food->sale_price }}</td>
                             <td>{{ $food->incurred}}</td>
-                            <td><a href="">sửa</a></td>
-                            <td><a href="" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>
+                            <td><a class="btn btn-primary" href="{{route('home.edit', $food->id)}}">sửa</a></td>
+                            <td><a class="btn btn-danger" href="{{route('home.delete', $food->id)}}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>
                         </tr>
                     @endforeach
                 @endif

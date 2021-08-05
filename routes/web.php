@@ -27,5 +27,9 @@ Route::prefix('home')->group(function (){
     Route::get('index',[FoodsController::class,'index'])->name('home.index');
     Route::get('create',[FoodsController::class,'create'])->name('home.create');
     Route::post('create',[FoodsController::class,'store'])->name('home.store');
-
+    Route::get('/edit/{id}',[FoodsController::class,'edit'])->name('home.edit');
+    Route::post('/update/{id}',[FoodsController::class,'update'])->name('home.update');
+    Route::get('/delete/{id}',[FoodsController::class,'delete'])->name('home.delete');
 });
+
+
