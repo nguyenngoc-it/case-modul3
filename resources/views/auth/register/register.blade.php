@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{asset('register/css/style.css')}}">
-
-
 </head>
 <body class="img" style="background-image: url({{asset('register/images/bg.jpg')}});">
 <section class="ftco-section">
