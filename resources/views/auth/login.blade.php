@@ -23,9 +23,9 @@
         @csrf
         <h1 class
             ="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-        <input type="text" name="email" id="inputEmail" class="form-control" placeholder="Email address"  autofocus="">
+        <input value="@if(session('data')){{session('data')['email']}}@endif" type="text" name="email" id="inputEmail" class="form-control" placeholder="Email address"  autofocus="">
         @error('email') <p class="text-danger">{{ $message }}</p>@enderror
-        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" >
+        <input value="@if(session('data')){{session('data')['password']}}@endif" type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" >
         @error('password') <p class="text-danger">{{ $message }}</p>@enderror
         <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
         <a href="#" id="forgot_pswd">Forgot password?</a>

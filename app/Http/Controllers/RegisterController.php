@@ -47,6 +47,11 @@ class RegisterController extends Controller
             $users->password= Hash::make($request->password);
             $users->namestore= $request->namestore;
             $users->save();
+            $data=[
+              'email'=>$users->email,
+                'password'=>$request->password
+            ];
+            return redirect()->route('home.login')->with('data',$data);
         }
 
 
