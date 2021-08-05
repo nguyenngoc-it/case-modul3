@@ -9,5 +9,5 @@ class FoodsController extends Controller
     public function index()
     {
         return view('backend.foods.list');
-  }
+    }
 }
