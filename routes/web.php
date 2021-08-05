@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FoodsController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
+})->name('welcome');
 Route::prefix('home')->group(function (){
-    Route::get('/register',[\App\Http\Controllers\RegisterController::class,'create'])->name('register.index');
-    Route::post('/register',[\App\Http\Controllers\RegisterController::class,'store'])->name('register.store');
+    Route::get('login',[LoginController::class,'index'])->name('home.showLogin');
+    Route::post('login',[LoginController::class,'login'])->name('home.login');
+    Route::get('index',[FoodsController::class,'index'])->name('home.index');
+    Route::get('register',[RegisterController::class,'create'])->name('register.index');
+    Route::post('register',[RegisterController::class,'store'])->name('register.store');
+});
+Route::get('test',function (){
+    return view('backend.master');
 });

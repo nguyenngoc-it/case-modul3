@@ -9,7 +9,8 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{asset('register/css/style.css')}}">
+
 
 </head>
 <body class="img" style="background-image: url({{asset('register/images/bg.jpg')}});">
@@ -30,7 +31,7 @@
                             <label class="label" for="name">User Name</label>
                             <input name="username" type="text" class="form-control" placeholder="input username">
                             <span class="icon fa fa-user-o"></span>
-                            @error('name')
+                            @error('username')
                             <p class="text-danger">{{$message}}</p>
                             @enderror
                         </div>
@@ -38,17 +39,11 @@
                             <label class="label" for="email">Email Address</label>
                             <input name="email" type="text" class="form-control" placeholder="johndoe@gmail.com">
                             <span class="icon fa fa-paper-plane-o"></span>
-                            @error('email')
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label class="label" for="email">Name store</label>
                             <input name="namestore" type="text" class="form-control" placeholder="name store">
                             <span class="icon fa fa-paper-plane-o"></span>
-                            @error('namestore')
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label class="label" for="password">Password</label>
@@ -80,11 +75,11 @@
     </div>
 </section>
 
-<script src="js/jquery.min.js"></script>
+<script src="{{asset('register/js/jquery.min.js')}}"></script>
 <script src="{{asset('register/js/my.js')}}"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{asset('register/js/popper.js')}}"></script>
+<script src="{{asset('register/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('register/js/main.js')}}"></script>
 
 </body>
 </html>

@@ -40,6 +40,7 @@ class RegisterRequest extends FormRequest
             'email.required'=>'emai không được để trống',
             'email.email'=>'email phải đúng định dạng',
             'email.unique'=>'email đã được sử dụng',
+            'email.regex'=>'email phải đúng định dạng',
             'password.required'=>'password không được để trống',
             'password.min'=>'password ít nhất 6 ký tự',
             'password_confirm.same'=>'Xác nhận mật khẩu không chính xác'
