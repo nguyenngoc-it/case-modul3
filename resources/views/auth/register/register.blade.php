@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{asset('register/css/style.css')}}">
-
 </head>
 <body class="img" style="background-image: url({{asset('register/images/bg.jpg')}});">
 <section class="ftco-section">
@@ -38,17 +37,11 @@
                             <label class="label" for="email">Email Address</label>
                             <input name="email" type="text" class="form-control" placeholder="johndoe@gmail.com">
                             <span class="icon fa fa-paper-plane-o"></span>
-                            @error('email')
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label class="label" for="email">Name store</label>
                             <input name="namestore" type="text" class="form-control" placeholder="name store">
                             <span class="icon fa fa-paper-plane-o"></span>
-                            @error('namestore')
-                            <p class="text-danger">{{$message}}</p>
-                            @enderror
                         </div>
                         <div class="form-group mb-3">
                             <label class="label" for="password">Password</label>
