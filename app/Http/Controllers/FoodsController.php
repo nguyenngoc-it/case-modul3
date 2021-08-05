@@ -71,4 +71,18 @@ class FoodsController extends Controller
         return redirect()->route('home.index');
     }
 
+    public function search(Request $request)
+    {
+
+        $key = $request->input_search;
+        if (!$key){
+         return   redirect()->route('home.index');
+        }
+        $foods= Foods::where('name', 'LIKE','%'.$key.'%')->paginate(5);
+        return view('backend.foods.list',compact('foods'));
+
+
+
+    }
+
 }
