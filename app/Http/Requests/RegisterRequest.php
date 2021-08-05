@@ -25,7 +25,7 @@ class RegisterRequest extends FormRequest
     {
         return [
             'username'=>"bail|required|min:3",
-            'email'=>'bail|required|email',
+            'email'=>'bail|required|email|unique:users,email',
             'password'=>'bail|required|min:6',
             'password_confirm'=>'bail|required|min:6|same:password'
 //            regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'])
@@ -39,6 +39,7 @@ class RegisterRequest extends FormRequest
             'username.min'=>'username ít nhất có 3 ký tự',
             'email.required'=>'emai không được để trống',
             'email.email'=>'email phải đúng định dạng',
+            'email.unique'=>'email đã được sử dụng',
             'email.regex'=>'email phải đúng định dạng',
             'password.required'=>'password không được để trống',
             'password.min'=>'password ít nhất 6 ký tự',
