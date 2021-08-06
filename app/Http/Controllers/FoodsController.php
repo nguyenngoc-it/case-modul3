@@ -5,14 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Foods;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class FoodsController extends Controller
 {
     public function index()
     {
 
-        $foods = Foods::all();
-        return view('backend.foods.list', compact('foods'));
+        $user= Auth::user();
+//        dd($user);
+        $stores = $user->stores()->first();
+        $foods= $stores->foods()->get();
+//        dd($food);
+        return view('backend.foods.list', compact('stores', 'foods'));
     }
 
     public function create()
@@ -41,11 +47,11 @@ class FoodsController extends Controller
 
     public function edit($id)
     {
-        $food= Foods::findOrFail($id);
-        return view('backend.foods.edit',compact('food'));
+        $food = Foods::findOrFail($id);
+        return view('backend.foods.edit', compact('food'));
     }
 
-    public function update(Request $request , $id)
+    public function update(Request $request, $id)
     {
         $food = Foods::findOrFail($id);
         if ($request->hasFile('image')) {
@@ -66,7 +72,7 @@ class FoodsController extends Controller
 
     public function delete($id)
     {
-        $food= Foods::findOrFail($id);
+        $food = Foods::findOrFail($id);
         $food->delete();
         return redirect()->route('home.index');
     }
@@ -75,14 +81,14 @@ class FoodsController extends Controller
     {
 
         $key = $request->input_search;
-        if (!$key){
-         return   redirect()->route('home.index');
+        if (!$key) {
+            return redirect()->route('home.index');
         }
-        $foods= Foods::where('name', 'LIKE','%'.$key.'%')->paginate(5);
-        return view('backend.foods.list',compact('foods'));
-
-
+        $foods = Foods::where('name', 'LIKE', '%' . $key . '%')->paginate(5);
+        return view('backend.foods.list', compact('foods'));
 
     }
+
+
 
 }

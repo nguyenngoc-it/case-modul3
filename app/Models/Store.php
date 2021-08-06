@@ -9,8 +9,13 @@ class Store extends Model
 {
     use HasFactory;
 
-    public function foods()
+    public function foods(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Foods::class);
+    }
+
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(User::class);
     }
 }

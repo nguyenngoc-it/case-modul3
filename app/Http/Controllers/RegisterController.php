@@ -42,13 +42,12 @@ class RegisterController extends Controller
     {
         if ($request->password === $request->password_confirm){
             $users= new User();
-            $users->name= $request->username;
+            $users->username= $request->username;
             $users->email= $request->email;
             $users->password= Hash::make($request->password);
             $users->namestore= $request->namestore;
             $users->save();
-
-            return redirect()->route('home.login');
+//            return redirect()->route('home.login');
 
             $data=[
               'email'=>$users->email,

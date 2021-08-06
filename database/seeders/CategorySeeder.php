@@ -14,6 +14,10 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+        $category= new Category();
+        $category->id=1;
+        $category->name= 'Bia Hoi';
+        $category->save();
 
     }
 }

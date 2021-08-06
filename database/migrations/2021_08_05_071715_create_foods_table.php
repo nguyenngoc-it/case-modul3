@@ -16,14 +16,11 @@ class CreateFoodsTable extends Migration
         Schema::create('foods', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('address');
-            $table->string('image');
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
+            $table->string('image')->nullable();
             $table->string('price');
-            $table->string('sale_price');
-            $table->string('incurred');
-            $table->string('tag');
+            $table->string('sale_price')->nullable();
+            $table->string('incurred')->nullable();
+            $table->string('tag')->nullable();
             $table->timestamps();
         });
     }
