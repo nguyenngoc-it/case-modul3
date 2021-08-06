@@ -1,5 +1,5 @@
 @extends('backend.master')
-@section('title', 'Thêm mới đồ ăn')
+@section('title', 'sua do an')
 
 @section('content')
     <div class="container">
