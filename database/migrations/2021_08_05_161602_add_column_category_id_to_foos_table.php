@@ -15,7 +15,7 @@ class AddColumnCategoryIdToFoosTable extends Migration
     {
         Schema::table('foods', function (Blueprint $table) {
            $table->unsignedBigInteger('category_id')->after('incurred');
-           $table->foreign('category_id')->references('id')->on('categories');
+           $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

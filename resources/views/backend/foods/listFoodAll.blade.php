@@ -3,9 +3,7 @@
 @section('content')
     <h1 class="mt-4">Foods Manager</h1>
     <ol class="breadcrumb mb-4">
-        <form method="get" action="{{route('home.create')}}">
-            <button type="submit">Add Food</button>
-        </form>
+
     </ol>
     <div class="col-12">
         <div class="row">
@@ -48,8 +46,7 @@
                             <td>{{ $food->price }}</td>
                             <td>{{ $food->sale_price }}</td>
                             <td>{{ $food->incurred}}</td>
-                            <td><a class="btn btn-primary" href="{{route('home.edit', $food->id)}}">sửa</a></td>
-                            <td><a class="btn btn-danger" href="{{route('home.delete', $food->id)}}" class="text-danger" onclick="return confirm('Bạn chắc chắn muốn xóa?')">xóa</a></td>
+
                         </tr>
                     @endforeach
                 @endif

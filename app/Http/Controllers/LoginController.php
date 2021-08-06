@@ -25,7 +25,7 @@ class LoginController extends Controller
             return redirect()->route('home.showLogin');
         }else{
             session()->put('userLogin',$data);
-            return redirect()->route('home.index');
+            return redirect()->route('store.index');
         }
 
     }
