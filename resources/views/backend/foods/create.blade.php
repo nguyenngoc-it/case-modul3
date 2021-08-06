@@ -17,16 +17,16 @@
                         </div>
                         <div class="form-group">
                             <label for="">Address</label>
-                            <input type="text" class="form-control" name="address" required>
+                            <select name="address" id="">
+                                @foreach($categories as $category)
+
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <label for="">Start time</label>
-                            <input type="datetime-local" class="form-control" name="start-time" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">End time</label>
-                            <input type="datetime-local" class="form-control" name="end-time" required>
-                            <div class="form-group">
+
+
+
                                 <label for="">Price</label>
                                 <input type="text" class="form-control" name="price" required>
                                 <div class="form-group">

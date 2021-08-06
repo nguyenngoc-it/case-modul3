@@ -38,11 +38,11 @@
                             <input name="email" type="text" class="form-control" placeholder="johndoe@gmail.com">
                             <span class="icon fa fa-paper-plane-o"></span>
                         </div>
-                        <div class="form-group mb-3">
-                            <label class="label" for="email">Name store</label>
-                            <input name="namestore" type="text" class="form-control" placeholder="name store">
-                            <span class="icon fa fa-paper-plane-o"></span>
-                        </div>
+{{--                        <div class="form-group mb-3">--}}
+{{--                            <label class="label" for="email">Name store</label>--}}
+{{--                            <input name="namestore" type="text" class="form-control" placeholder="name store">--}}
+{{--                            <span class="icon fa fa-paper-plane-o"></span>--}}
+{{--                        </div>--}}
                         <div class="form-group mb-3">
                             <label class="label" for="password">Password</label>
                             <input name="password" id="password" type="password" class="form-control" placeholder="Password">
@@ -62,6 +62,14 @@
                             <p class="text-danger">{{$message}}</p>
                             @enderror
                         </div>
+                        <div class="form-group mb-3">
+                            <label class="label" for="password">Password</label>
+                            <select  name="role" id="password-confirm"  class="form-control">
+                                <option value="2">Sell</option>
+                                <option value="3">Buy</option>
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <button name="signup" type="submit" class="form-control btn btn-primary submit px-3">Sign Up</button>
                         </div>
