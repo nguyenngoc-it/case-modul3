@@ -14,7 +14,7 @@ class AddColumnUserIdToStoresTable extends Migration
     public function up()
     {
         Schema::table('stores', function (Blueprint $table) {
-         $table->unsignedBigInteger('user_id')->after('address');
+         $table->unsignedBigInteger('user_id')->after('address')->nullable();
          $table->foreign('user_id')->references('id')->on('users');
         });
     }
