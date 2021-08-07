@@ -15,6 +15,12 @@ class FoodsController extends Controller
     public function index()
     {
 
+
+        $user= Auth::user();
+        $stores = $user->stores()->first();
+        $foods= $stores->foods()->get();
+        return view('backend.foods.list', compact('stores', 'foods'));
+
         $user = Auth::user();
         $store = $user->stores()->first();
         if ($user->stores()->count()==0){
@@ -32,6 +38,7 @@ class FoodsController extends Controller
     {
         $foods= Foods::all();
         return view('backend.foods.listFoodAll', compact('foods'));
+
     }
 
     public function create()

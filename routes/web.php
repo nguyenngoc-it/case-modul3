@@ -66,6 +66,12 @@ Route::prefix('home')->group(function (){
         Route::get('{id}/category',[\App\Http\Controllers\OderController::class,'foodCategory'])->name('shop.category');
     });
 
+   Route::prefix('store')->group(function (){
+       Route::get('shop',[\App\Http\Controllers\FoodApiController::class,'index']);
+   });
+
+
+
 });
 
 

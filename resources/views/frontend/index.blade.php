@@ -272,7 +272,11 @@
                                             data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                             aria-expanded="false" aria-label="Toggle navigation">Pages</a>
                                         <ul class="sub-menu collapse" id="submenu-1-2">
+
                                             <li class="nav-item"><a href="{{route('shop.show')}}">danh sách món ăn giảm giá</a></li>
+
+                                            <li class="nav-item"><a href="about-us.html">About Us</a></li>
+
                                             <li class="nav-item"><a href="faq.html">Faq</a></li>
                                             <li class="nav-item"><a href="login.html">Login</a></li>
                                             <li class="nav-item"><a href="register.html">Register</a></li>
@@ -283,11 +287,21 @@
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
+
                                             aria-expanded="false" aria-label="Toggle navigation">Category</a>
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             @foreach($categories as $category)
                                             <li class="nav-item" ><a href="{{route('shop.category',$category->id)}}">{{$category->name}}</a></li>
                                             @endforeach
+
+                                            aria-expanded="false" aria-label="Toggle navigation">Shop</a>
+                                        <ul class="sub-menu collapse" id="submenu-1-3">
+                                            <li class="nav-item"><a href="product-grids.html">Shop Grid</a></li>
+                                            <li class="nav-item"><a href="product-list.html">Shop List</a></li>
+                                            <li class="nav-item"><a href="product-details.html">shop Single</a></li>
+                                            <li class="nav-item"><a href="cart.html">Cart</a></li>
+                                            <li class="nav-item"><a href="checkout.html">Checkout</a></li>
+
                                         </ul>
                                     </li>
                                     <li class="nav-item">
@@ -423,7 +437,11 @@
                     <!-- Start Single Product -->
                     <div class="single-product">
                         <div class="product-image">
+
                             <img src="{{ asset('storage/'.$food->image) }}" alt="" style="width: 100px; height: 100px">
+
+                            <img src="{{asset('storage/'.$food->image)}}}" alt="#">
+
                             <div class="button">
                                 <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
                             </div>
