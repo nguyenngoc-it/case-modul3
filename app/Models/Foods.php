@@ -15,9 +15,9 @@ class Foods extends Model
         return $this->belongsTo(Category::class);
     }
 
-    public function stores()
+    public function store(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        $this->belongsTo(Store::class);
+       return $this->belongsTo(Store::class);
     }
 
 

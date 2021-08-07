@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -20,6 +21,9 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
+
+
+
         $category=new Category();
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -53,6 +57,7 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $category=Category::findOrFail($id);
+        $category->foods()->dissociate();
         $category->delete();
         return redirect()->route('category.index');
 }

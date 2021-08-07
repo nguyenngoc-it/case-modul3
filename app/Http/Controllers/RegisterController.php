@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\RegisterRequest;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -28,6 +29,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
+
         return view('auth.register.register');
 
     }
@@ -41,11 +43,13 @@ class RegisterController extends Controller
     public function store(RegisterRequest $request)
     {
         if ($request->password === $request->password_confirm){
+
             $users= new User();
+            $users->role_id= $request->role;
             $users->username= $request->username;
             $users->email= $request->email;
             $users->password= Hash::make($request->password);
-            $users->namestore= $request->namestore;
+//            $users->namestore= $request->namestore;
             $users->save();
 //            return redirect()->route('home.login');
 
