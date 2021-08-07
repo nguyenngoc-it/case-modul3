@@ -32,6 +32,8 @@
                                 <div class="form-group">
                                     <label for="">Sale price</label>
                                     <input type="text" class="form-control" name="sale-price" required>
+                                    <label >Discount Code</label>
+                                    <input type="text" class="form-control" name="discount-code" >
                                     <div class="form-group">
                                         <label for="">Incurred </label>
                                         <input type="text"class="form-control" name="incurred" required>

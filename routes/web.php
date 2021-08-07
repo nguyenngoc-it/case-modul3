@@ -60,6 +60,11 @@ Route::prefix('home')->group(function (){
         Route::post('/edit/{id}',[\App\Http\Controllers\UserController::class,'update'])->name('user.update');
         Route::get('/delete/{id}',[\App\Http\Controllers\UserController::class,'destroy'])->name('user.destroy');
     });
+    Route::prefix('shop')->group(function (){
+        Route::get('',[\App\Http\Controllers\OderController::class,'index'])->name('shop.index');
+        Route::get('/show',[\App\Http\Controllers\OderController::class,'showAll'])->name('shop.show');
+        Route::get('{id}/category',[\App\Http\Controllers\OderController::class,'foodCategory'])->name('shop.category');
+    });
 
 });
 
