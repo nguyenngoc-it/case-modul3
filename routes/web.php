@@ -61,6 +61,12 @@ Route::prefix('home')->group(function (){
         Route::get('/delete/{id}',[\App\Http\Controllers\UserController::class,'destroy'])->name('user.destroy');
     });
 
+   Route::prefix('store')->group(function (){
+       Route::get('shop',[\App\Http\Controllers\FoodApiController::class,'index']);
+   });
+
+
+
 });
 
 
