@@ -14,10 +14,8 @@ class FoodsController extends Controller
     {
 
         $user= Auth::user();
-//        dd($user);
         $stores = $user->stores()->first();
         $foods= $stores->foods()->get();
-//        dd($food);
         return view('backend.foods.list', compact('stores', 'foods'));
     }
 

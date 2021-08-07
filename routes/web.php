@@ -40,6 +40,9 @@ Route::prefix('home')->group(function (){
         Route::post('edit/{id}',[CategoryController::class,'update'])->name('category.update');
         Route::get('delete/{id}',[CategoryController::class,'delete'])->name('category.delete');
     });
+   Route::prefix('store')->group(function (){
+       Route::get('shop',[\App\Http\Controllers\FoodApiController::class,'index']);
+   });
 });
 
 
