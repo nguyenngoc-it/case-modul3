@@ -65,6 +65,7 @@ class FoodsController extends Controller
 
         $food->price = $request->input('price');
         $food->sale_price = $request->input('sale-price');
+        $food->discount_code = $request->input('discount-code');
         $food->incurred = $request->input('incurred');
         $food->save();
         return redirect()->route('home.index');
@@ -85,11 +86,9 @@ class FoodsController extends Controller
             $food->image = $path;
         }
         $food->name = $request->input('name');
-        $food->address = $request->input('address');
-        $food->start_time = $request->input('start-time');
-        $food->end_time = $request->input('end-time');
         $food->price = $request->input('price');
         $food->sale_price = $request->input('sale-price');
+        $food->discount_code = $request->input('discount-code');
         $food->incurred = $request->input('incurred');
         $food->save();
         return redirect()->route('home.index');

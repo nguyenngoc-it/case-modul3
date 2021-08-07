@@ -16,22 +16,15 @@
                             <input value="{{$food->name}}" type="text" class="form-control" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="">Address</label>
-                            <input value="{{$food->address}}" type="text" class="form-control" name="address" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">Start time</label>
-                            <input value="{{$food->start_time}}" type="datetime" class="form-control" name="start-time" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="">End time</label>
-                            <input value="{{$food->end_time}}" type="datetime" class="form-control" name="end-time" required>
+
                             <div class="form-group">
                                 <label for="">Price</label>
                                 <input value="{{$food->price}}"type="text" class="form-control" name="price" required>
                                 <div class="form-group">
                                     <label for="">Sale price</label>
                                     <input value="{{$food->sale_price}}" type="text" class="form-control" name="sale-price" required>
+                                    <label for="">Discount Code</label>
+                                    <input value="{{$food->discount_count}}" type="text" class="form-control" name="discount-code" >
                                     <div class="form-group">
                                         <label for="">Incurred </label>
                                         <input value="{{$food->incurred}}" type="text"class="form-control" name="incurred" required>

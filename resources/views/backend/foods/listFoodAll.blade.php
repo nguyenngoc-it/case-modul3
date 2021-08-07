@@ -19,6 +19,7 @@
                     <th scope="col">Category</th>
                     <th scope="col">Price</th>
                     <th scope="col">Sale_Price</th>
+                    <th scope="col">Discount code</th>
                     <th scope="col">Incurred</th>
 
 
@@ -45,6 +46,7 @@
                             <td>@if(isset($food->category)){{$food->category->name}}@endif</td>
                             <td>{{ $food->price }}</td>
                             <td>{{ $food->sale_price }}</td>
+                            <td>{{ $food->discount_code }}</td>
                             <td>{{ $food->incurred}}</td>
 
                         </tr>
