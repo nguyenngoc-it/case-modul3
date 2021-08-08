@@ -92,10 +92,10 @@
                             </div>
                             <ul class="user-login">
                                 <li>
-                                    <a href="login.html">Sign In</a>
+                                    <a href="{{route('home.showLogin')}}">Sign In</a>
                                 </li>
                                 <li>
-                                    <a href="register.html">Register</a>
+                                    <a href="{{route('register.index')}}">Register</a>
                                 </li>
                             </ul>
                         </div>
