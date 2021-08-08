@@ -110,7 +110,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-3 col-7">
                     <!-- Start Header Logo -->
-                    <a class="navbar-brand" href="{{route('shop.index')}}">
+                    <a class="navbar-brand" href="index.blade.php">
                         <img style="width: 100px" src="{{asset('assets1/images/logo/logo.png')}}" alt="Logo">
                     </a>
                     <!-- End Header Logo -->
@@ -159,9 +159,9 @@
                                 </a>
                             </div>
                             <div class="cart-items">
-                                <a href="javascript:void(0)" class="main-btn">
+                                <a href="{{route('shop.cart')}}" class="main-btn">
                                     <i class="lni lni-cart"></i>
-                                    <span class="total-items">2</span>
+                                    <span class="total-items"></span>
                                 </a>
                                 <!-- Shopping Item -->
                                 <div class="shopping-item">
@@ -225,7 +225,7 @@
                     <div class="mega-category-menu">
                         <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
                         <ul class="sub-category">
-                            <li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
+
                                 <ul class="inner-sub-category">
                                     <li><a href="product-grids.html">Digital Cameras</a></li>
                                     <li><a href="product-grids.html">Camcorders</a></li>
@@ -272,24 +272,19 @@
                                        data-bs-target="#submenu-1-2" aria-controls="navbarSupportedContent"
                                        aria-expanded="false" aria-label="Toggle navigation">Pages</a>
                                     <ul class="sub-menu collapse" id="submenu-1-2">
+
                                         <li class="nav-item"><a href="{{route('shop.show')}}">danh sách món ăn giảm giá</a></li>
-                                        <li class="nav-item"><a href="faq.html">Faq</a></li>
-                                        <li class="nav-item"><a href="login.html">Login</a></li>
-                                        <li class="nav-item"><a href="register.html">Register</a></li>
-                                        <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
-                                        <li class="nav-item"><a href="404.html">404 Error</a></li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
                                     <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
                                        data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
-                                       aria-expanded="false" aria-label="Toggle navigation">Shop</a>
+
+                                       aria-expanded="false" aria-label="Toggle navigation">Category</a>
                                     <ul class="sub-menu collapse" id="submenu-1-3">
-                                        <li class="nav-item"><a href="product-grids.html">Shop Grid</a></li>
-                                        <li class="nav-item"><a href="product-list.html">Shop List</a></li>
-                                        <li class="nav-item"><a href="product-details.html">shop Single</a></li>
-                                        <li class="nav-item"><a href="cart.html">Cart</a></li>
-                                        <li class="nav-item"><a href="checkout.html">Checkout</a></li>
+{{--                                        @foreach($categories as $category)--}}
+{{--                                            <li class="nav-item" ><a href="{{route('shop.category',$category->id)}}">{{$category->name}}</a></li>--}}
+{{--                                        @endforeach--}}
                                     </ul>
                                 </li>
                                 <li class="nav-item">
@@ -340,122 +335,61 @@
 </header>
 <!-- End Header Area -->
 
-<!-- Start Hero Area -->
-<section class="hero-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-12 custom-padding-right">
-                <div class="slider-head">
-                    <!-- Start Hero Slider -->
-                    <div class="hero-slider">
-                        <!-- Start Single Slider -->
-                        <div class="single-slider"
-                             style="background-image: url({{asset('assets1/images/logo/cover-food.jpg')}})">
-                            <div class="content">
-                                <h2><span>No restocking fee ($35 savings)</span>
-                                    delicious food
-                                </h2>
-                            </div>
-                        </div>
-                        <!-- End Single Slider -->
-                        <!-- Start Single Slider -->
-                        <div class="single-slider"
-                             style="background-image: url({{asset('assets1/images/logo/chup-anh-mon-an-chuyen-nghiep-tu-liam-min-min.jpg')}});">
-                            <div class="content">
-                                <h2><span>Big Sale Offer</span>
-                                    Get the Best Deal on CCTV Camera
-                                </h2>
-                                <h3><span>Combo Only:</span> $590.00</h3>
-                            </div>
-                        </div>
-                        <!-- End Single Slider -->
-                    </div>
-                    <!-- End Hero Slider -->
-                </div>
-            </div>
-            <div class="col-lg-4 col-12">
-                <div class="row">
-                    <div class="col-lg-12 col-md-6 col-12 md-custom-padding">
-                        <!-- Start Small Banner -->
-                        <div class="hero-small-banner"
-                             style="background-image: url('{{asset('assets1/images/logo/cover-food-5-types.jpg')}}');">
-                            <div class="content">
-                                <h2>
-                                    <span>New line required</span>
-                                    iPhone 12 Pro Max
-                                </h2>
-                                <h3>$259.99</h3>
-                            </div>
-                        </div>
-                        <!-- End Small Banner -->
-                    </div>
-                    <div class="col-lg-12 col-md-6 col-12">
-                        <!-- Start Small Banner -->
-                        <div class="hero-small-banner style2"  style="background-image: url({{asset('assets1/images/logo/hinh-anh-tra-sua-dep.jpg')}})">
-                            <div class="content">
-                                <h2>Weekly Sale!</h2>
-                                <p>Saving up to 50% off all online store items this week.</p>
-                                <div class="button" >
-                                    <a class="btn" href="product-grids.html">Shop Now</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Start Small Banner -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Hero Area -->
+
+
+
 
 <!-- Start Trending Product Area -->
 <section class="trending-product section" style="margin-top: 12px;">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="section-title">
-                    <h2>Ưu đãi</h2>
-                </div>
+
             </div>
         </div>
         <div class="row">
-            @foreach($foods as $food)
-                <div class="col-lg-3 col-md-6 col-12">
-                    <!-- Start Single Product -->
-                    <div class="single-product">
-                        <div class="product-image">
-                            <img src="{{ asset('storage/'.$food->image) }}" alt="" style="width: 100px; height: 100px">
-                            <div class="button">
-                                <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <span class="category">Watches</span>
-                            <h4 class="title">
-                                <a href="product-grids.html">{{$food->name}}</a>
-                            </h4>
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star"></i></li>
-                                <li><span></span></li>
-                            </ul>
-                            <div class="price">
-                                <span>{{$food->price}}</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product -->
-                </div>
-            @endforeach
+{{--            @foreach($foods as $food)--}}
+{{--                <div class="col-lg-3 col-md-6 col-12">--}}
+{{--                    <!-- Start Single Product -->--}}
+{{--                    <div class="single-product">--}}
+{{--                        <div class="product-image">--}}
+
+{{--                            <img src="{{ asset('storage/'.$food->image) }}" alt="" style="width: 100px; height: 100px">--}}
+
+{{--                            <img src="{{asset('storage/'.$food->image)}}}" alt="#">--}}
+
+{{--                            <div class="button">--}}
+{{--                                <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="product-info">--}}
+{{--                            <span class="category">Watches</span>--}}
+{{--                            <h4 class="title">--}}
+{{--                                <a href="product-grids.html">{{$food->name}}</a>--}}
+{{--                            </h4>--}}
+{{--                            <ul class="review">--}}
+{{--                                <li><i class="lni lni-star-filled"></i></li>--}}
+{{--                                <li><i class="lni lni-star-filled"></i></li>--}}
+{{--                                <li><i class="lni lni-star-filled"></i></li>--}}
+{{--                                <li><i class="lni lni-star-filled"></i></li>--}}
+{{--                                <li><i class="lni lni-star"></i></li>--}}
+{{--                                <li><span></span></li>--}}
+{{--                            </ul>--}}
+{{--                            <div class="price">--}}
+{{--                                <span>{{$food->price}}</span>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                    <!-- End Single Product -->--}}
+{{--                </div>--}}
+{{--            @endforeach--}}
         </div>
     </div>
 </section>
 <!-- End Trending Product Area -->
 
+
+@yield('content')
 <!-- Start Call Action Area -->
 <section class="call-action section">
     <div class="container">
@@ -477,88 +411,6 @@
     </div>
 </section>
 <!-- End Call Action Area -->
-
-<!-- Start Banner Area -->
-<section class="banner section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="single-banner" style="background-image:url('assets/images/banner/banner-1-bg.jpg')">
-                    <div class="content">
-                        <h2>Smart Watch 2.0</h2>
-                        <p>Space Gray Aluminum Case with <br>Black/Volt Real Sport Band </p>
-                        <div class="button">
-                            <a href="product-grids.html" class="btn">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6 col-12">
-                <div class="single-banner custom-responsive-margin"
-                     style="background-image:url('assets/images/banner/banner-2-bg.jpg')">
-                    <div class="content">
-                        <h2>Smart Headphone</h2>
-                        <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
-                            incididunt ut labore.</p>
-                        <div class="button">
-                            <a href="product-grids.html" class="btn">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Banner Area -->
-
-<!-- Start Shipping Info -->
-<section class="shipping-info">
-    <div class="container">
-        <ul>
-            <!-- Free Shipping -->
-            <li>
-                <div class="media-icon">
-                    <i class="lni lni-delivery"></i>
-                </div>
-                <div class="media-body">
-                    <h5>Free Shipping</h5>
-                    <span>On order over $99</span>
-                </div>
-            </li>
-            <!-- Money Return -->
-            <li>
-                <div class="media-icon">
-                    <i class="lni lni-support"></i>
-                </div>
-                <div class="media-body">
-                    <h5>24/7 Support.</h5>
-                    <span>Live Chat Or Call.</span>
-                </div>
-            </li>
-            <!-- Support 24/7 -->
-            <li>
-                <div class="media-icon">
-                    <i class="lni lni-credit-cards"></i>
-                </div>
-                <div class="media-body">
-                    <h5>Online Payment.</h5>
-                    <span>Secure Payment Services.</span>
-                </div>
-            </li>
-            <!-- Safe Payment -->
-            <li>
-                <div class="media-icon">
-                    <i class="lni lni-reload"></i>
-                </div>
-                <div class="media-body">
-                    <h5>Easy Return.</h5>
-                    <span>Hassle Free Shopping.</span>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-<!-- End Shipping Info -->
 
 <!-- Start Footer Area -->
 <footer class="footer">
@@ -714,6 +566,8 @@
 
 <!-- ========================= JS here ========================= -->
 <script src="{{asset('assets1/js/bootstrap.min.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="{{asset('assets1/js/my.js')}}"></script>
 <script src="{{asset('assets1/js/tiny-slider.js')}}"></script>
 <script src="{{asset('assets1/js/glightbox.min.js')}}"></script>
 <script src="{{asset('assets1/js/main.js')}}"></script>
@@ -757,8 +611,7 @@
         }
     });
 </script>
-<script src="{{asset('js/my.js')}}"></script>
+
 </body>
 
 </html>
-

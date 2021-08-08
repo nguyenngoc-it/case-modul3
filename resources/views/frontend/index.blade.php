@@ -110,7 +110,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
-                        <a class="navbar-brand" href="index.blade.php">
+                        <a class="navbar-brand" href="{{route('shop.index')}}">
                             <img style="width: 100px" src="{{asset('assets1/images/logo/logo.png')}}" alt="Logo">
                         </a>
                         <!-- End Header Logo -->
@@ -159,9 +159,9 @@
                                     </a>
                                 </div>
                                 <div class="cart-items">
-                                    <a href="javascript:void(0)" class="main-btn">
+                                    <a href="{{route('shop.cart')}}" class="main-btn">
                                         <i class="lni lni-cart"></i>
-                                        <span class="total-items">2</span>
+                                        <span class="total-items" id="shoppingCart">{{count((array)session('cart'))}}</span>
                                     </a>
                                     <!-- Shopping Item -->
                                     <div class="shopping-item">
@@ -225,31 +225,14 @@
                         <div class="mega-category-menu">
                             <span class="cat-button"><i class="lni lni-menu"></i>All Categories</span>
                             <ul class="sub-category">
-                                <li><a href="product-grids.html">Electronics <i class="lni lni-chevron-right"></i></a>
+
                                     <ul class="inner-sub-category">
-                                        <li><a href="product-grids.html">Digital Cameras</a></li>
-                                        <li><a href="product-grids.html">Camcorders</a></li>
-                                        <li><a href="product-grids.html">Camera Drones</a></li>
-                                        <li><a href="product-grids.html">Smart Watches</a></li>
-                                        <li><a href="product-grids.html">Headphones</a></li>
-                                        <li><a href="product-grids.html">MP3 Players</a></li>
-                                        <li><a href="product-grids.html">Microphones</a></li>
-                                        <li><a href="product-grids.html">Chargers</a></li>
-                                        <li><a href="product-grids.html">Batteries</a></li>
-                                        <li><a href="product-grids.html">Cables & Adapters</a></li>
+                                        @foreach($categories as $category)
+                                            <li class="nav-item" ><a href="{{route('shop.category',$category->id)}}">{{$category->name}}</a></li>
+                                        @endforeach
+
                                     </ul>
-                                </li>
-                                <li><a href="product-grids.html">accessories</a></li>
-                                <li><a href="product-grids.html">Televisions</a></li>
-                                <li><a href="product-grids.html">best selling</a></li>
-                                <li><a href="product-grids.html">top 100 offer</a></li>
-                                <li><a href="product-grids.html">sunglass</a></li>
-                                <li><a href="product-grids.html">watch</a></li>
-                                <li><a href="product-grids.html">man’s product</a></li>
-                                <li><a href="product-grids.html">Home Audio & Theater</a></li>
-                                <li><a href="product-grids.html">Computers & Tablets </a></li>
-                                <li><a href="product-grids.html">Video Games </a></li>
-                                <li><a href="product-grids.html">Home Appliances </a></li>
+
                             </ul>
                         </div>
                         <!-- End Mega Category Menu -->
@@ -281,11 +264,11 @@
                                             data-bs-target="#submenu-1-3" aria-controls="navbarSupportedContent"
 
                                             aria-expanded="false" aria-label="Toggle navigation">Category</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-3">
-                                            @foreach($categories as $category)
-                                            <li class="nav-item" ><a href="{{route('shop.category',$category->id)}}">{{$category->name}}</a></li>
-                                            @endforeach
-                                        </ul>
+{{--                                        <ul class="sub-menu collapse" id="submenu-1-3">--}}
+{{--                                            @foreach($categories as $category)--}}
+{{--                                            <li class="nav-item" ><a href="{{route('shop.category',$category->id)}}">{{$category->name}}</a></li>--}}
+{{--                                            @endforeach--}}
+{{--                                        </ul>--}}
                                     </li>
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
@@ -410,7 +393,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>List Food</h2>
+                        <h2>Ưu đãi</h2>
                     </div>
                 </div>
             </div>
@@ -426,7 +409,7 @@
                             <img src="{{asset('storage/'.$food->image)}}}" alt="#">
 
                             <div class="button">
-                                <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+                                <a data-id="{{$food->id}}" class="btn addtocart"><i class="lni lni-cart"></i> Add to Cart</a>
                             </div>
                         </div>
                         <div class="product-info">
@@ -454,6 +437,7 @@
         </div>
     </section>
     <!-- End Trending Product Area -->
+{{--    {{$foods->links()}}--}}
 
     <!-- Start Call Action Area -->
     <section class="call-action section">
@@ -669,6 +653,7 @@
                 </div>
             </div>
         </div>
+{{--        {{$foods->links()}}--}}
         <!-- End Footer Middle -->
         <!-- Start Footer Bottom -->
         <div class="footer-bottom">
@@ -713,6 +698,8 @@
 
     <!-- ========================= JS here ========================= -->
     <script src="{{asset('assets1/js/bootstrap.min.js')}}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" ></script>
+    <script src="{{asset('assets1/js/my.js')}}"></script>
     <script src="{{asset('assets1/js/tiny-slider.js')}}"></script>
     <script src="{{asset('assets1/js/glightbox.min.js')}}"></script>
     <script src="{{asset('assets1/js/main.js')}}"></script>
