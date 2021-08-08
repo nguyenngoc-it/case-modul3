@@ -111,7 +111,7 @@
                     <div class="col-lg-3 col-md-3 col-7">
                         <!-- Start Header Logo -->
                         <a class="navbar-brand" href="index.blade.php">
-                            <img src="{{asset('assets1/images/logo/download.png')}}" alt="Logo">
+                            <img style="width: 100px" src="{{asset('assets1/images/logo/logo.png')}}" alt="Logo">
                         </a>
                         <!-- End Header Logo -->
                     </div>
@@ -275,13 +275,7 @@
 
                                             <li class="nav-item"><a href="{{route('shop.show')}}">danh sách món ăn giảm giá</a></li>
 
-                                            <li class="nav-item"><a href="about-us.html">About Us</a></li>
 
-                                            <li class="nav-item"><a href="faq.html">Faq</a></li>
-                                            <li class="nav-item"><a href="login.html">Login</a></li>
-                                            <li class="nav-item"><a href="register.html">Register</a></li>
-                                            <li class="nav-item"><a href="mail-success.html">Mail Success</a></li>
-                                            <li class="nav-item"><a href="404.html">404 Error</a></li>
                                         </ul>
                                     </li>
                                     <li class="nav-item">
