@@ -265,7 +265,7 @@
                             <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
                                 <ul id="nav" class="navbar-nav ms-auto">
                                     <li class="nav-item">
-                                        <a href="index.blade.php" class="active" aria-label="Toggle navigation">Home</a>
+                                        <a href="{{asset(route('shop.index'))}}" class="active" aria-label="Toggle navigation">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="dd-menu collapsed" href="javascript:void(0)" data-bs-toggle="collapse"
@@ -274,8 +274,6 @@
                                         <ul class="sub-menu collapse" id="submenu-1-2">
 
                                             <li class="nav-item"><a href="{{route('shop.show')}}">danh sách món ăn giảm giá</a></li>
-
-
                                         </ul>
                                     </li>
                                     <li class="nav-item">
