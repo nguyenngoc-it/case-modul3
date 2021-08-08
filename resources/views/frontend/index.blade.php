@@ -293,15 +293,6 @@
                                             @foreach($categories as $category)
                                             <li class="nav-item" ><a href="{{route('shop.category',$category->id)}}">{{$category->name}}</a></li>
                                             @endforeach
-
-                                            aria-expanded="false" aria-label="Toggle navigation">Shop</a>
-                                        <ul class="sub-menu collapse" id="submenu-1-3">
-                                            <li class="nav-item"><a href="product-grids.html">Shop Grid</a></li>
-                                            <li class="nav-item"><a href="product-list.html">Shop List</a></li>
-                                            <li class="nav-item"><a href="product-details.html">shop Single</a></li>
-                                            <li class="nav-item"><a href="cart.html">Cart</a></li>
-                                            <li class="nav-item"><a href="checkout.html">Checkout</a></li>
-
                                         </ul>
                                     </li>
                                     <li class="nav-item">
