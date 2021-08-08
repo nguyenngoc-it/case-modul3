@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/search',[\App\Http\Controllers\FoodsController::class,'search'])->name('search');
+Route::get('addToCart',[\App\Http\Controllers\Api\OderController::class,'index'])->name('addToCart');

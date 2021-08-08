@@ -64,7 +64,14 @@ Route::prefix('home')->group(function (){
         Route::get('',[\App\Http\Controllers\OderController::class,'index'])->name('shop.index');
         Route::get('/show',[\App\Http\Controllers\OderController::class,'showAll'])->name('shop.show');
         Route::get('{id}/category',[\App\Http\Controllers\OderController::class,'foodCategory'])->name('shop.category');
+        Route::get('cart', [\App\Http\Controllers\OderController::class,'viewCart'])->name('shop.cart');
+       Route::get('/{id}/addtocart',[\App\Http\Controllers\OderController::class,'addToCart'])->name('shop.addtocart');
+       Route::get('/update',[\App\Http\Controllers\OderController::class,'updateCart'])->name('shop.updatecart');
+       Route::get('/remove',[\App\Http\Controllers\OderController::class,'removeCart'])->name('shop.removecart');
+
+
     });
+
 });
 
 
