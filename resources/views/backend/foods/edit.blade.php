@@ -15,19 +15,28 @@
                             <label>Name</label>
                             <input value="{{$food->name}}" type="text" class="form-control" name="name" required>
                         </div>
+                        <div>
+                            <select name="address" id="">
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                         <div class="form-group">
-
                             <div class="form-group">
                                 <label for="">Price</label>
-                                <input value="{{$food->price}}"type="text" class="form-control" name="price" required>
+                                <input value="{{$food->price}}" type="text" class="form-control" name="price" >
                                 <div class="form-group">
                                     <label for="">Sale price</label>
-                                    <input value="{{$food->sale_price}}" type="text" class="form-control" name="sale-price" required>
+                                    <input value="{{$food->sale_price}}" type="text" class="form-control"
+                                           name="sale-price" >
                                     <label for="">Discount Code</label>
-                                    <input value="{{$food->discount_count}}" type="text" class="form-control" name="discount-code" >
+                                    <input value="{{$food->discount_count}}" type="text" class="form-control"
+                                           name="discount-code">
                                     <div class="form-group">
                                         <label for="">Incurred </label>
-                                        <input value="{{$food->incurred}}" type="text"class="form-control" name="incurred" required>
+                                        <input value="{{$food->incurred}}" type="text" class="form-control"
+                                               name="incurred" >
                                     </div>
                                     <div class="form-group">
                                         <label for="">Image</label>

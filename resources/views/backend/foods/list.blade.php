@@ -44,7 +44,7 @@
                                     <img src="public/storage/imgs/p9fO19BK4hqqtZO2dVDDOEHPdGTjxS58HbsHDFTH.png" alt="" style="width: 100px; height: 100px">
                                 @endif
                             </td>
-                            <td>@if(isset($store)){{$store->address}}@endif</td>
+                            <td>@if(isset($food->store)){{$food->store->address}}@endif</td>
                             <td>@if(isset($food->category)){{$food->category->name}}@endif</td>
                             <td>{{ $food->price }}</td>
                             <td>{{ $food->sale_price }}</td>

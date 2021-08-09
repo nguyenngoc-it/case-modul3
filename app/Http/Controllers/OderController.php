@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Foods;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OderController extends Controller
 {
     public function index()
     {
 
-        $foods = Foods::wherenotNull('discount_code')->get();
+        $foods = Foods::wherenotNull('discount_code')->limit('4')->get();
 
         $categories = Category::all();
         return view('frontend.index', compact('foods', 'categories'));
@@ -28,9 +29,10 @@ class OderController extends Controller
 
     public function foodCategory($id)
     {
+        $categories = Category::all();
         $category = Category::findOrFail($id);
         $foods = $category->foods()->get();
-        return view('frontend.listcategory', compact('foods', 'category'));
+        return view('frontend.listcategory', compact('foods', 'category','categories'));
 
     }
 
@@ -94,4 +96,27 @@ class OderController extends Controller
         return view('frontend.order');
 
     }
+    public function search(Request $request)
+    {
+
+        $key = $request->input('input_search');
+        if (!$key) {
+            return redirect()->route('shop.index');
+        }
+        $foods = Foods::where('name', 'LIKE', '%' . $key . '%')->paginate(5);
+        $categories = Category::all();
+        return view('frontend.index', compact('foods', 'categories'));
+
+    }
+    public function logout(Request $request)
+    {
+      Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('home.login');
+    }
+
 }

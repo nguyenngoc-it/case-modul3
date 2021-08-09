@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::prefix('home')->group(function (){
     Route::get('login',[LoginController::class,'index'])->name('home.showLogin');
     Route::post('login',[LoginController::class,'login'])->name('home.login');
+    Route::get('logout',[LoginController::class,'logout'])->name('home.logout');
     Route::get('register',[RegisterController::class,'create'])->name('register.index');
     Route::post('register',[RegisterController::class,'store'])->name('register.store');
     Route::get('index',[FoodsController::class,'index'])->name('home.index');
@@ -68,6 +69,9 @@ Route::prefix('home')->group(function (){
        Route::get('/{id}/addtocart',[\App\Http\Controllers\OderController::class,'addToCart'])->name('shop.addtocart');
        Route::get('/update',[\App\Http\Controllers\OderController::class,'updateCart'])->name('shop.updatecart');
        Route::get('/remove',[\App\Http\Controllers\OderController::class,'removeCart'])->name('shop.removecart');
+       Route::get('search',[\App\Http\Controllers\OderController::class,'search'])->name('shop.search');
+       Route::get('logout',[\App\Http\Controllers\OderController::class,'logout'])->name('shop.logout');
+
        Route::get('/order',[\App\Http\Controllers\OderController::class,'order'])->name('shop.order');
     });
 

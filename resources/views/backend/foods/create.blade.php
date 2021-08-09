@@ -16,10 +16,9 @@
                             <input type="text" class="form-control" name="name" required>
                         </div>
                         <div class="form-group">
-                            <label for="">Address</label>
+                            <label for="">Danh mục</label>
                             <select name="address" id="">
                                 @foreach($categories as $category)
-
                                 <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
                             </select>
@@ -31,12 +30,12 @@
                                 <input type="text" class="form-control" name="price" required>
                                 <div class="form-group">
                                     <label for="">Sale price</label>
-                                    <input type="text" class="form-control" name="sale-price" required>
+                                    <input type="text" class="form-control" name="sale-price" >
                                     <label >Discount Code</label>
                                     <input type="text" class="form-control" name="discount-code" >
                                     <div class="form-group">
                                         <label for="">Incurred </label>
-                                        <input type="text"class="form-control" name="incurred" required>
+                                        <input type="text"class="form-control" name="incurred" >
                                     </div>
                                     <div class="form-group">
                                         <label for="">Image</label>
