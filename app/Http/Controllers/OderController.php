@@ -12,7 +12,7 @@ class OderController extends Controller
     public function index()
     {
 
-        $foods = Foods::wherenotNull('discount_code')->limit('4')->get();
+        $foods = Foods::wherenotNull('discount_code')->limit('8')->get();
 
         $categories = Category::all();
         return view('frontend.index', compact('foods', 'categories'));
