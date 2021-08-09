@@ -26,6 +26,7 @@
                                     @php
                                         $total=0;
                                     @endphp
+                                    @if(!$cart==null)
                                     @foreach($cart as $id=>$food)
                                         @php
                                             $total +=$food['price']*$food['quantity'];
@@ -44,11 +45,15 @@
                                         </td>
                                     </tr>
                                     @endforeach
+                                    @endif
                                     </tbody>
                                 </table>
                                 <div class="col-md-12">
                                     <h3>Total:{{number_format($total)}}$</h3>
                                 </div>
+                                    <div class="col-md-12">
+                                        <a href="{{route('shop.order')}}" class="btn btn-primary">Payment</a>
+                                    </div>
                                 </div>
                             </form>
                         </div>

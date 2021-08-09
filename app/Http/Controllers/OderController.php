@@ -88,4 +88,10 @@ class OderController extends Controller
         }
 
     }
+
+    public function order()
+    {
+        return view('frontend.order');
+
+    }
 }

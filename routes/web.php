@@ -68,9 +68,9 @@ Route::prefix('home')->group(function (){
        Route::get('/{id}/addtocart',[\App\Http\Controllers\OderController::class,'addToCart'])->name('shop.addtocart');
        Route::get('/update',[\App\Http\Controllers\OderController::class,'updateCart'])->name('shop.updatecart');
        Route::get('/remove',[\App\Http\Controllers\OderController::class,'removeCart'])->name('shop.removecart');
-
-
+       Route::get('/order',[\App\Http\Controllers\OderController::class,'order'])->name('shop.order');
     });
+
 
 });
 
