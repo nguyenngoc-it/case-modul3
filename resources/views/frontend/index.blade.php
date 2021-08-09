@@ -125,7 +125,7 @@
                             <div class="navbar-search search-style-5">
                                 <div class="search-select">
                                     <div class="select-position">
-                                        <select id="select1">
+                                        <select style="height: 38px; !important;"  id="select1">
                                             <option selected>All</option>
                                             <option value="1">option 01</option>
                                             <option value="2">option 02</option>
