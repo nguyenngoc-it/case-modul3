@@ -177,34 +177,7 @@
                                             <span>2 Items</span>
                                             <a href="cart.html">View Cart</a>
                                         </div>
-                                        <ul class="shopping-list">
-                                            <li>
-                                                <a href="javascript:void(0)" class="remove" title="Remove this item"><i
-                                                        class="lni lni-close"></i></a>
-                                                <div class="cart-img-head">
-                                                    <a class="cart-img" href="product-details.html"><img
-                                                            src="assets/images/header/cart-items/item1.jpg" alt="#"></a>
-                                                </div>
 
-                                                <div class="content">
-                                                    <h4><a href="product-details.html">
-                                                            Apple Watch Series 6</a></h4>
-                                                    <p class="quantity">1x - <span class="amount">$99.00</span></p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)" class="remove" title="Remove this item"><i
-                                                        class="lni lni-close"></i></a>
-                                                <div class="cart-img-head">
-                                                    <a class="cart-img" href="product-details.html"><img
-                                                            src="assets/images/header/cart-items/item2.jpg" alt="#"></a>
-                                                </div>
-                                                <div class="content">
-                                                    <h4><a href="product-details.html">Wi-Fi Smart Camera</a></h4>
-                                                    <p class="quantity">1x - <span class="amount">$35.00</span></p>
-                                                </div>
-                                            </li>
-                                        </ul>
                                         <div class="bottom">
                                             <div class="total">
                                                 <span>Total</span>
@@ -403,9 +376,7 @@
                     <div class="single-product">
                         <div class="product-image">
 
-                            <img src="{{ asset('storage/'.$food->image) }}" alt="" style="width: 100px; height: 100px">
-
-                            <img src="{{asset('storage/'.$food->image)}}}" alt="#">
+                            <img src="{{ asset('storage/'.$food->image) }}" alt="" style="width: 100%; height: 200px">
 
                             <div class="button">
                                 <a data-id="{{$food->id}}" class="btn addtocart"><i class="lni lni-cart"></i> Add to Cart</a>
