@@ -1,7 +1,7 @@
 @extends('backend.master')
 @section('title', 'Danh Sach Foods')
 @section('content')
-    <h1 class="mt-4">Foods Manager</h1>
+    <h1 class="mt-4">Store Manager</h1>
     <ol class="breadcrumb mb-4">
         <form method="get" action="{{route('store.create')}}">
             <button type="submit">Create Store</button>

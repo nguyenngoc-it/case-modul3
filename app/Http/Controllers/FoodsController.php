@@ -60,7 +60,6 @@ class FoodsController extends Controller
         }
         $food->name = $request->input('name');
         $food->category()->associate($request->input('address'));
-
         $food->store_id = $store->id;
 
         $food->price = $request->input('price');
@@ -74,7 +73,8 @@ class FoodsController extends Controller
     public function edit($id)
     {
         $food = Foods::findOrFail($id);
-        return view('backend.foods.edit', compact('food'));
+        $categories=Category::all();
+        return view('backend.foods.edit', compact('food','categories'));
     }
 
     public function update(Request $request, $id)
@@ -87,6 +87,7 @@ class FoodsController extends Controller
         }
         $food->name = $request->input('name');
         $food->price = $request->input('price');
+        $food->category()->associate($request->input('address'));
         $food->sale_price = $request->input('sale-price');
         $food->discount_code = $request->input('discount-code');
         $food->incurred = $request->input('incurred');

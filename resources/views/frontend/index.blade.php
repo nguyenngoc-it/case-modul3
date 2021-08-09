@@ -88,7 +88,7 @@
                         <div class="top-end">
                             <div class="user">
                                 <i class="lni lni-user"></i>
-                                Hello
+                                Hello {{\Illuminate\Support\Facades\Auth::user()->username}}
                             </div>
                             <ul class="user-login">
                                 <li>
@@ -96,6 +96,9 @@
                                 </li>
                                 <li>
                                     <a href="{{route('register.index')}}">Register</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('shop.logout')}}">Logout</a>
                                 </li>
                             </ul>
                         </div>
@@ -132,12 +135,17 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="search-input">
-                                    <input type="text" placeholder="Search">
+                                <div>
+                                    <form method="get" action="{{route('shop.search')}}" class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                                        @csrf
+                                        <div class="input-group">
+                                            <input name="input_search" class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                                            <input   class="btn btn-primary" id="btnNavbarSearch" type="submit"><i class="fas fa-search"></i></input>
+                                        </div>
+                                    </form>
+
                                 </div>
-                                <div class="search-btn">
-                                    <button><i class="lni lni-search-alt"></i></button>
-                                </div>
+
                             </div>
                             <!-- navbar search Ends -->
                         </div>
@@ -340,10 +348,6 @@
                             <div class="single-slider"
                                 style="background-image: url({{asset('assets1/images/logo/chup-anh-mon-an-chuyen-nghiep-tu-liam-min-min.jpg')}});">
                                 <div class="content">
-                                    <h2><span>Big Sale Offer</span>
-                                        Get the Best Deal on CCTV Camera
-                                    </h2>
-                                    <h3><span>Combo Only:</span> $590.00</h3>
                                 </div>
                             </div>
                             <!-- End Single Slider -->
@@ -358,11 +362,6 @@
                             <div class="hero-small-banner"
                                 style="background-image: url('{{asset('assets1/images/logo/cover-food-5-types.jpg')}}');">
                                 <div class="content">
-                                    <h2>
-                                        <span>New line required</span>
-                                        iPhone 12 Pro Max
-                                    </h2>
-                                    <h3>$259.99</h3>
                                 </div>
                             </div>
                             <!-- End Small Banner -->
